@@ -1,0 +1,18 @@
+{% extends "home/base.html" %}
+{% block content %}
+ {% if user.is_authenticated %}
+<div class="container">
+  <h4><a href=" {% url 'check-user'%}"  > Check Users </a></h4><br>
+  <h4><a href=" {% url 'addcompanyform'%}"  > Add a New Company </a></h4><br>
+  <h4><a href=" {% url 'userregdetailsform'%}"  > Click here to check Student registration Details for a specific company </a></h4><br>
+  <h4><a href="{% url 'date-stats-place-form'%}">Click here to get details of students who registered for placements on a specified date</a></h4><br>
+  <h4><a href="{% url 'date-stats-com-form'%}">Click here to get details of students who registered for companies on a specified date</a></h4><br>
+  <h4><a href="{% url 'date-stats-ann-form'%}">Click here to get details of announcements for a specified date</a></h4><br>
+  <h4><a href=" {% url 'adminannounceform'%}"  > Click here to add announcements </a></h4><br>
+</div>
+ {% else %}
+ <h2> Login to Access and Update Details</h2>
+ {% endif %}
+
+
+{% endblock content%}
